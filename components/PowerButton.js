@@ -25,7 +25,7 @@ export default function PowerButton() {
 
   const powerOnAnimation = () => {
     Animated.timing(moveAnim, {
-      toValue: viewHeight - 65,
+      toValue: 0,
       duration: 1000,
       useNativeDriver: false,
     }).start();
@@ -33,7 +33,7 @@ export default function PowerButton() {
 
   const powerOffAnimation = () => {
     Animated.timing(moveAnim, {
-      toValue: 0,
+      toValue: viewHeight - 65,
       duration: 1000,
       useNativeDriver: false,
     }).start();
@@ -50,7 +50,7 @@ export default function PowerButton() {
             ...styles.icon,
             borderColor: powerOn ? "#FEC31A" : "#0FAA4B",
             shadowColor: powerOn ? "#FEC31A" : "#0FAA4B",
-            top: moveAnim,
+            bottom: moveAnim,
           }}
         >
           <Ionicons
